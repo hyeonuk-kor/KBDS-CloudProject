@@ -1,0 +1,19 @@
+html, body {
+  height:100%;
+  font-family: 'GmarketSans';
+}
+.custom-control-input:checked~.custom-control-label::before {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+.btn-yellow {
+    background-color: yellow;
+}
+
+.cu-md-pr {
+    margin-left: -1.5%;
+}
+
+.cu-md-pl {
+    margin-left: 1.5%;
+}
