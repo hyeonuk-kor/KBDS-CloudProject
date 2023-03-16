@@ -144,18 +144,16 @@
         return true;
     }
 
-    function nextPage() {
+        function nextPage() {
         'use strict'
         var forms = document.querySelectorAll('.needs-validation')
         let object = {};
-        let fieldcheck = false;
         Array.prototype.slice.call(forms)
             .forEach(function(form) {
                 form.addEventListener('submit', function(event) {
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
-                        fieldcheck = false;
                         form.classList.add('was-validated')
                     } else {
                         if (jumin()) {
@@ -166,13 +164,14 @@
                             document.signup.action = 'step2.html'
                         } else {
                             alert("잘못된 주민등록번호입니다.")
-                            form.classList.add('was-validated')
                             event.preventDefault()
                             event.stopPropagation()
                             form.querySelector("#prenum").classList.add('is-invalid');
                             form.querySelector("#postnum").classList.add('is-invalid');
+                            form.querySelector("#prenum").setCustomValidity("잘못된 주민등록번호입니다.");
+                            form.querySelector("#postnum").setCustomValidity("잘못된 주민등록번호입니다.");
+                            form.classList.add('was-validated')
                         }
-                        form.classList.remove('was-validated')
                     }
                 })
             })
