@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,14 +52,14 @@
                                 </tr>
                                 <tr>
                                     <th>자동차 정보</th>
-                                    <td>소나타</td>
-                                    <td>연식 3년</td>
+                                    <td id="car"></td>
+                                    <td id="year"></td>
                                     <td>가액 2036만원</td>
                                 </tr>
                                 <tr>
                                     <th>운전자 정보</th>
-                                    <td>홍길동</td>
-                                    <td>33세</td>
+                                    <td id="name">홍길동</td>
+                                    <td id="prenum"></td>
                                     <td>개인회원</td>
                                 </tr>
                                 <tr>
@@ -93,11 +94,8 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <strong>기간 :</strong> 2023/02/27 ~ 2033/02/27<br>
-                    <strong>보장보험료 + 적립보험료 :</strong> 9,900원<br>
-                    <strong>예상 만기 환급금 :</strong> 95,497원<br>
-                    <strong>예상 만기 환급률 :</strong> 8%<br>
+                <div class="col-md-3" id="sub">
+
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
@@ -110,4 +108,51 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script></html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    window.onload = function() {
+        let name = sessionStorage.getItem('name');
+        let prenum = sessionStorage.getItem('birthday');
+        let car = sessionStorage.getItem('car');
+        let year = sessionStorage.getItem('car_year');
+        document.getElementById('name').textContent = name;
+        document.getElementById('prenum').textContent = prenum;
+        document.getElementById('car').textContent = car;
+        document.getElementById('year').textContent = year;
+        // 현재 날짜 객체 생성
+        let today = new Date();
+
+        // 년, 월, 일 정보 추출
+        let year1 = today.getFullYear();
+        let month1 = ("0" + (today.getMonth() + 1)).slice(-2);
+        let day1 = ("0" + today.getDate()).slice(-2);
+        let plus = 10;
+        let cost = ["9,900원", "15,300원", "19,800원"];
+        let ret = ["95,497원", "222,700원", "380,160원" ]
+        let retp = ["8%","9%","12%"]
+        document.getElementById('sub').innerHTML = `<strong>기간 :</strong>${year1}/${month1}/${day1}~${year1+plus}/${month1}/${day1}<br>
+        <strong>보장보험료 + 적립보험료 :</strong> 9,900원<br>
+        <strong>예상 만기 환급금 :</strong> 95,497원<br>
+        <strong>예상 만기 환급률 :</strong> 8%<br>`;
+        const radios = document.getElementsByName('exampleRadios');
+        for (let i = 0; i < radios.length; i++) {
+            radios[i].addEventListener('click', function() {
+                plus = 10;
+                for (let j = 0; j < radios.length; j++) {
+                    if (radios[j].checked) {
+                        plus = plus + 5 * j;
+                        document.getElementById('sub').innerHTML = `<strong>기간 :</strong>${year1}/${month1}/${day1}~${year1+plus}/${month1}/${day1}<br>
+        <strong>보장보험료 + 적립보험료 :</strong> ${cost[j]}<br>
+        <strong>예상 만기 환급금 :</strong> ${ret[j]}<br>
+        <strong>예상 만기 환급률 :</strong> ${retp[j]}<br>`;
+                        break;
+                    }
+                }
+            });
+        }
+
+    }
+
+</script>
+
+</html>
