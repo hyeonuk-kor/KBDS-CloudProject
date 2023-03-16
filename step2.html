@@ -100,7 +100,7 @@
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 mb-3  d-flex justify-content-center">
-                    <button class="btn btn-lg btn-block text-dark" style="background-color: yellow;" type="submit" onclick="alert('확인')">확 인</button>
+                    <button class="btn btn-lg btn-block text-dark" style="background-color: yellow;" type="submit" onclick="next()">확 인</button>
                 </div>
             </div>
         </div>
@@ -152,7 +152,9 @@
         }
 
     }
-
+    function next() {
+        window.location.href = 'step3.html';
+    }
 </script>
 
 </html>
