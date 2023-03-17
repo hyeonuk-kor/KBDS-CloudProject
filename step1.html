@@ -16,18 +16,14 @@
 <body class="d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="pricing-header p-4 pb-md-4 mx-auto">
-            <h3 class="text-center">KB데이타시스템 자동차보험 가입 안내</h3>
+            <h3 class="text-center">자동차보험 가입 안내</h3>
             <div class="row d-flex justify-content-center align-item-center">
-                <div class="col-md-2"></div>
-                <div class="col-md-2 d-flex justify-content-center align-item-center">
-                    <img class="img-fluid" src="./img/author.png" alt="">
-                </div>
                 <div class="col-md-5 align-items-center d-flex">
                     <p class=" text-muted">
-                        안녕하세요 고객님!<br> 적절한 보험 상품을 추천하기 위해,<br>
-                        고객님의 개인 정보를 입력해주세요.<br>
-                        개인정보는 일체 저장되지 않으며,<br>
-                        보험료 계산/가입을 위한 용도로 조회됩니다.<br>
+                        안녕하세요 고객님! 적절한 보험 상품을 추천하기 위해,
+                        고객님의 개인 정보를 입력해주세요.
+                        개인정보는 일체 저장되지 않으며,
+                        보험료 계산/가입을 위한 용도로 조회됩니다.
                     </p>
                 </div>
             </div>
@@ -155,24 +151,15 @@
                         event.stopPropagation()
                         form.classList.add('was-validated')
                     } else {
-                        if (jumin()) {
-                            let formData = new FormData(document.querySelector('#signup'));
-                            for (let data of formData) {
-                                sessionStorage.setItem(data[0], data[1]);
-                            }
-                            document.signup.action = 'step2.html'
-                        } else {
-                            alert("잘못된 주민등록번호입니다.")
-                            event.preventDefault()
-                            event.stopPropagation()
-                            form.querySelector("#prenum").value ="";
-                            form.querySelector("#postnum").value="";
-                            form.classList.add('was-validated')
+                        let formData = new FormData(document.querySelector('#signup'));
+                        for (let data of formData) {
+                            sessionStorage.setItem(data[0], data[1]);
                         }
+                        document.signup.action = 'step2.html'
                     }
                 })
             })
     }
-
 </script>
+
 </html>
