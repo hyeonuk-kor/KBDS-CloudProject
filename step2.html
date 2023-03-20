@@ -18,86 +18,98 @@
 <body class="d-flex justify-content-center align-items-center">
 
     <div class="container">
-
         <div class="pricing-header p-4 pb-md-4 mx-auto">
 
-            <h3 class="text-center">가입 내용 확인</h3>
-            <div class="row d-flex justify-content-center align-item-center">
-                <div class="col-md-5 align-items-center d-flex">
-                    <p class=" text-muted">
-                        <br>
-                        고객님! 아래의 가입 내용을 확인해주세요.<br>
-                        내용확인 중 궁금하신 사항은<br>
-                        상담사에게 바로 문의해주시고,<br>
-                        내용이 맞으면 확인 버튼을 눌러주세요.
-                    </p>
-                </div>
-            </div>
-            <div class="row d-flex mb-1  d-flex justify-content-center align-item-center">
-                <div class="col-md-5">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <tbody class="text-center">
-                                <tr>
-                                    <th>정보</th>
-                                    <td>차보험</td>
-                                    <td>자가용</td>
-                                    <td>본 인</td>
-                                </tr>
-                                <tr>
-                                    <th>자동차</th>
-                                    <td id="car"></td>
-                                    <td id="year"></td>
-                                    <td>2036만원</td>
-                                </tr>
-                                <tr>
-                                    <th>정보</th>
-                                    <td id="name">홍길동</td>
-                                    <td id="prenum"></td>
-                                    <td>개인회원</td>
-                                </tr>
-                                <tr>
-                                    <th>담당자</th>
-                                    <td>KBDS</td>
-                                    <td>서울본부</td>
-                                    <td>김연아</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center align-item-center mb-3">
-                <div class="col-md-2 justify-content-center align-item-center">
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                            10년 납입 / 10년 만기
-                        </label>
-                    </div>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                            15년 납입 / 15년 만기
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                            20년 납입 / 20년 만기
-                        </label>
-                    </div>
-                </div>
-                <div class="col-md-3" id="sub">
+            <div class="input-form-backgroud row">
 
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 mb-3  d-flex justify-content-center">
-                    <button class="btn btn-lg btn-block text-dark" style="background-color: yellow;" type="submit" onclick="next()">확 인</button>
+                <div class="input-form">
+
+                    <form name="signup" id="signup" class="needs-validation" novalidate>
+                        <div class="row d-flex justify-content-center">
+                            <h2 class="text-center">가입 내용 확인</h2>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-4 text-muted">
+                                <p class=" text-muted">
+                                    고객님! 아래의 가입 내용을 확인해주세요.
+                                    내용확인 중 궁금하신 사항은
+                                    상담사에게 바로 문의해주시고,
+                                    내용이 맞으면 확인 버튼을 눌러주세요.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-4 mb-2">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <tbody class="text-center">
+                                            <tr>
+                                                <th>정보</th>
+                                                <td>차보험</td>
+                                                <td>자가용</td>
+                                                <td>본 인</td>
+                                            </tr>
+                                            <tr>
+                                                <th>자동차</th>
+                                                <td id="car"></td>
+                                                <td id="year"></td>
+                                                <td>2036만원</td>
+                                            </tr>
+                                            <tr>
+                                                <th>정보</th>
+                                                <td id="name">홍길동</td>
+                                                <td id="prenum"></td>
+                                                <td>개인회원</td>
+                                            </tr>
+                                            <tr>
+                                                <th>담당자</th>
+                                                <td>KBDS</td>
+                                                <td>서울본부</td>
+                                                <td>김연아</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-4 mb-2 text-center">
+                                <div class="form-check mb-2 ">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        10년 납입 / 10년 만기
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        15년 납입 / 15년 만기
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        20년 납입 / 20년 만기
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-4 mb-2 text-center" id="sub">
+
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-6 mb-3  d-flex justify-content-center">
+                                <button class="btn btn-lg btn-block text-dark" style="background-color: yellow;" type="submit" onclick="next()">확 인</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -122,8 +134,8 @@
         let day1 = ("0" + today.getDate()).slice(-2);
         let plus = 10;
         let cost = ["9,900원", "15,300원", "19,800원"];
-        let ret = ["95,497원", "222,700원", "380,160원" ]
-        let retp = ["8%","9%","12%"]
+        let ret = ["95,497원", "222,700원", "380,160원"]
+        let retp = ["8%", "9%", "12%"]
         document.getElementById('sub').innerHTML = `<strong>기간 :</strong>${year1}/${month1}/${day1}~${year1+plus}/${month1}/${day1}<br>
         <strong>보장보험료 + 적립보험료 :</strong> 9,900원<br>
         <strong>예상 만기 환급금 :</strong> 95,497원<br>
@@ -146,9 +158,11 @@
         }
 
     }
+
     function next() {
         window.location.href = 'step3.html';
     }
+
 </script>
 
 </html>

@@ -16,20 +16,25 @@
 <body class="d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="pricing-header p-4 pb-md-4 mx-auto">
-            <h3 class="text-center">자동차보험 가입 안내</h3>
-            <div class="row d-flex justify-content-center align-item-center">
-                <div class="col-md-5 align-items-center d-flex">
-                    <p class=" text-muted">
-                        안녕하세요 고객님! 적절한 보험 상품을 추천하기 위해,
-                        고객님의 개인 정보를 입력해주세요.
-                        개인정보는 일체 저장되지 않으며,
-                        보험료 계산/가입을 위한 용도로 조회됩니다.
-                    </p>
-                </div>
-            </div>
+
             <div class="input-form-backgroud row">
+
                 <div class="input-form">
+
                     <form name="signup" id="signup" class="needs-validation" novalidate>
+                        <div class="row d-flex justify-content-center">
+                            <h2 class="text-center">자동차보험 가입 안내</h2>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-4 mb-2">
+                                <p class="text-muted">
+                                    안녕하세요 고객님! 적절한 보험 상품을 추천하기 위해,
+                                    고객님의 개인 정보를 입력해주세요.
+                                    개인정보는 일체 저장되지 않으며,
+                                    보험료 계산/가입을 위한 용도로 조회됩니다.
+                                </p>
+                            </div>
+                        </div>
                         <div class="row d-flex justify-content-center">
                             <div class="col-md-4 mb-2">
                                 <label for="name">이름</label>
@@ -39,24 +44,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row  justify-content-center">
-                            <div class="col-md-2 mb-2">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-4 mb-2">
                                 <label for="prenum">주민등록번호</label>
                                 <input type="text" class="form-control cu-md-pl" name="birthday" id="prenum" placeholder="앞자리" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');" pattern=".{6,6}" minlength='6' maxlength="6" required>
                                 <div class="invalid-feedback">
                                     앞자리를 다시 입력해주세요.
                                 </div>
-                            </div>
-                            <div class="col-md-2 mb-3">
-                                <label for="postnum" style="font-size: 0px;"> </label>
+                                <br>
                                 <input type="password" class="form-control cu-md-pr" id="postnum" placeholder="뒷자리" onKeydown="this.value=this.value.replace(/[^-0-9]/g,'');" minlength='7' maxlength="7" pattern=".{7,7}" required>
                                 <div class="invalid-feedback">
                                     뒷자리를 다시 입력해주세요.
                                 </div>
                             </div>
+
                         </div>
                         <div class="row d-flex justify-content-center">
-                            <div class="col-md-2 mb-2">
+                            <div class="col-md-4 mb-2">
                                 <label for="car">자동차</label>
                                 <input type="text" class="form-control" name="car" id="car" placeholder="ex : 벤츠" required>
                                 <div class="invalid-feedback">
@@ -64,7 +68,9 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-2 mb-3">
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-4 mb-3">
                                 <label for="postnum">연식</label>
                                 <select name="car_year" id="year" class="form-control">
 
@@ -160,6 +166,7 @@
                 })
             })
     }
+
 </script>
 
 </html>
