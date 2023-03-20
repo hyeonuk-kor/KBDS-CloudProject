@@ -9,3 +9,21 @@ html, body {
 .btn-yellow {
     background-color: yellow;
 }
+input[type="checkbox"] {
+  height: 1em;
+  width: 1em;
+}
+
+.form-check-label {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 1em;
+}
+
+.form-check-input {
+  width: 1.2em;
+  height: 1.2em;
+  margin-top: 0.25em;
+  margin-right: 0.5em;
+  margin-left: 0;
+}
